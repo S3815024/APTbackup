@@ -36,7 +36,7 @@ string recursiveInput(action action, string playerInput)
             returnValue = true;
         }
         else{
-            std::cout << "Input must be only capital letters A-Z " << std::endl;
+            std::cout << "Please enter your name below and characters must be only capital letters(A-Z) " << std::endl;
         }
     }
     else if (action == MENU_INPUT)
@@ -47,7 +47,10 @@ string recursiveInput(action action, string playerInput)
             returnValue = true;
         }
         else if(regex_match(playerInput, regex("^help$"))){
-            std::cout <<" help called accha thikase"<<endl;
+            std::cout <<"Enter 1 to start a new game\n"<<endl;
+            std::cout <<"Enter 2 to load a saved game\n"<<endl;
+            std::cout <<"Enter 3 to print game credits\n"<<endl;
+            std::cout <<"Enter 4 quit game\n"<<endl;
         }
         else{
             std::cout << "Please select 1,2,3 or 4 " << std::endl;
@@ -83,18 +86,18 @@ string recursiveInput(action action, string playerInput)
         else{
             if(regex_match(playerInput, regex("(place)(.*)")))
             {
-                std::cout << "Please check Tile in hand and place on board" << std::endl;
-                std::cout << "Input as (place <tile> at (board-coordinate)" << std::endl;
+                std::cout << "Please enter the correct Tile in hand and place on board" << std::endl;
+                std::cout << "Input as (place <tile> at <board-coordinate>)" << std::endl;
             }
             else if (regex_match(playerInput, regex("(replace)(.*)")))
             {
                 
-                std::cout << "Please check Tile in hand " << std::endl;
+                std::cout << "Please input the correct Tile in hand " << std::endl;
                 std::cout << "Input as (replace <tile>)" << std::endl;
             }
             else if (regex_match(playerInput, regex("(save)(.*)")))
             {
-                std::cout << "Input as (save <name>)" << std::endl;
+                std::cout << "If you want to save game write as (save <name>)" << std::endl;
             }
             else{
                 std::cout << "Invalid input type (help)" << std::endl;
