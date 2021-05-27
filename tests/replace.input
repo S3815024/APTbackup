@@ -1,0 +1,4 @@
+place P6 at A1
+2
+./tests/replace.save
+replace O6
